@@ -1,3 +1,131 @@
 # premier script en python
-text = " Hello World ! "
-print ( text )
+"""text = " Hello World ! "
+print ( text )"""
+##################################################################
+# variables
+
+"""a = 1
+b = 2
+c = 3.2
+text = "Chaine de caracteres"
+
+bool_var1 = None
+bool_var2 = True
+
+print("Variables :", a, b, c, text, "\n")
+
+# operations
+addition = a + b
+soustraction = b - a
+produit = a * b
+division = a / b
+division2 = a / c
+puissance = b ** b
+
+print("Addition :", addition, "\n")
+print("Soustraction :", soustraction, "\n")
+print("Produit :", produit, "\n")
+print("Division :", division, "\n")
+print("Division2 :", division2, "\n")
+print("Puissance X^Y :", puissance, "\n")"""
+
+###################################################################
+
+"""x = int(input("Please enter an integer : "))
+
+if x < 0:
+    x = 0
+    print("Negative changed to zero")
+elif x == 0:
+    print("Zero")
+elif x == 1:
+    print("Single")
+else:
+    print("More")"""
+    
+    
+###################################################################
+# iteration d'elements
+"""words = ['cat', 'window', 'defenestrate']
+for w in words:
+    print(w, len(w))
+
+# progression arithmetique
+a = ['Mary', 'had', 'a', 'little', 'lamb']
+for i in range(len(a)):
+    print(i, a[i])
+
+# while
+a, b = 0, 1
+while b < 10:
+    print(b)
+    a, b = b, a + b"""
+    
+###################################################################
+
+"""import time
+import gi
+gi.require_version("GLib", "2.0")
+from gi.repository import GLib
+
+def process_a():
+    print("[process_a] :", time.time())
+    return True  # True = on continue à appeler
+
+def process_b():
+    print("[process_b] :", time.time())
+    return True
+
+loop = GLib.MainLoop()
+
+GLib.timeout_add(500, process_a)   # toutes les 500 ms
+GLib.timeout_add(1000, process_b)  # toutes les 1000 ms
+
+try:
+    loop.run()
+except KeyboardInterrupt:
+    print("Fin du programme")
+    loop.quit()"""
+    
+###################################################################
+import matplotlib.pyplot as plot
+import time
+import warnings
+import sys
+
+sys.tracebacklimit = 0
+warnings.filterwarnings("ignore", ".*GUI is implemented.*")
+
+# plot data (global)
+x_data = []
+y_data = []
+
+
+
+def run_plot():
+    plot.ion()
+    print("ok1")
+    plot_handle, = plot.plot([-1, 70], [-1, 4000], marker='o')  # initialise
+
+    try:
+        for i in range(60):
+            x_data.append(i)
+            print("ok2")
+            y_data.append(i * i)
+
+            plot_handle.set_xdata(x_data)
+            plot_handle.set_ydata(y_data)
+
+            plot.draw()
+            while True:
+                plot.pause(0.05)
+                break
+
+    except KeyboardInterrupt:
+        time.sleep(1)
+        plot.close()
+        print("Fin du programme\n")
+        pass
+        
+if __name__ == "__main__":
+    run_plot()
