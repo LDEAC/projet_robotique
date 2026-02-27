@@ -11,6 +11,9 @@ mR.setPosition(float('inf'))
 mL.setVelocity(0.0)
 mR.setVelocity(0.0)
 
+kb = robot.getKeyboard()
+kb.enable(timestep)
+
 # --- Capteurs ---
 ds = []
 for i in range(7):
@@ -71,3 +74,5 @@ while robot.step(timestep) != -1:
     else:
         mL.setVelocity(speed_gauche)
         mR.setVelocity(speed_droite)
+        
+        

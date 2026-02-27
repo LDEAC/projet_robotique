@@ -97,6 +97,9 @@ def behavior_follow(vals, s):
 robot = Robot()
 timestep = int(robot.getBasicTimeStep())
 
+kb = robot.getKeyboard()
+kb.enable(timestep)
+
 motor_left = robot.getDevice('motor.left')
 motor_right = robot.getDevice('motor.right')
 motor_left.setPosition(float('inf'))
@@ -140,3 +143,22 @@ while robot.step(timestep) != -1:
 
     motor_left.setVelocity(vL)
     motor_right.setVelocity(vR)
+    print("----")
+    # Clavier
+    key = kb.getKey()
+    if key == kb.LEFT:
+        print("left")
+        motor_left.setVelocity(0.0)
+        motor_right.setVelocity(MAX_MOTOR)
+    elif key == kb.RIGHT:
+        print("reight")
+        motor_left.setVelocity(MAX_MOTOR)
+        motor_right.setVelocity(0.0)
+    elif key==kb.UP:
+        print("UP")
+        motor_left.setVelocity(MAX_MOTOR)
+        motor_right.setVelocity(MAX_MOTOR)
+    elif key==kb.DOWN:
+        print("DOWN")
+        motor_left.setVelocity(-MAX_MOTOR)
+        motor_right.setVelocity(-MAX_MOTOR)
