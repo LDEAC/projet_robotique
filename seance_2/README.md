@@ -14,7 +14,7 @@ Le dossier de la simulation contient les éléments suivants :
   Contrôleur du robot **anxieux** (robot leader du convoi).
 
 
-Un fichier vidéo est également fourni.  
+Un dossier vidéo est également fourni.  
 Il montre les différents comportements des robots ainsi que le fonctionnement des convoi en simulation.
 # Projet Robotique – Séance 2
 
