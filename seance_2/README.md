@@ -39,9 +39,6 @@ Deux configurations ont été étudiées :
 - Convoi 1 : Anxieux – Indécis – Indécis  
 - Convoi 2 : Anxieux – Timide – Timide  
 
-La configuration retenue comme fonctionnelle est :
-
-Anxieux –Indécis-Indécis
 
 Dans toutes les configurations, le robot anxieux joue le rôle de leader.  
 Il fixe la trajectoire suivie par les robots placés derrière lui.
@@ -101,16 +98,14 @@ plus l’obstacle frontal est proche, plus la vitesse diminue.
 
 ## Principe général
 
-Le robot indécis adopte un comportement réactif inspiré du modèle de Braitenberg.
-
-Dans cette logique  les capteurs sont directement couplés aux moteurs :  
+Le robot indécis adopte un comportement réactif inspiré du modèle de Braitenberg:
 plus un obstacle est proche d’un côté, plus la roue correspondante ralentit.
 
 ## Logique des vitesses
 
 Les vitesses des roues sont calculées à partir de combinaisons pondérées des capteurs latéraux.
 
-Cette structure provoque automatiquement :
+Cette structure provoque  :
 - un ralentissement en présence d’obstacles,
 - une correction de trajectoire lorsque la perception est asymétrique.
 
