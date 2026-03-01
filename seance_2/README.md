@@ -13,8 +13,6 @@ Le dossier de la simulation contient les éléments suivants :
 - `thymio_exemple/`  
   Contrôleur du robot **anxieux** (robot leader du convoi).
 
-- `thymio_manual_control/`  
-  Version permettant un contrôle manuel du robot via le clavier.
 
 Un fichier vidéo est également fourni.  
 Il montre les différents comportements des robots ainsi que le fonctionnement des convoi en simulation.
