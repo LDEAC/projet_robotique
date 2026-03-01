@@ -1,23 +1,23 @@
 from controller import Robot
 
-# =========================
+
 # PARAMETRES
-# =========================
+
 MAX_SPEED = 6.0
 
-# Plus grand => freine moins (v reste plus proche de MAX_SPEED)
+
 SEUIL_CAPTEURS = 3500.0
 
-# Seuil d'arrêt (sur la moyenne frontale pondérée)
+# Seuil d'arrêt 
 TH_STOP = 1200.0
 
 STATE_GO = 0
 STATE_STOP = 1
 
 
-# =========================
+
 # FONCTIONS
-# =========================
+
 def read_sensors(distanceSensors):
     vals = []
     for i in range(7):
@@ -25,16 +25,16 @@ def read_sensors(distanceSensors):
     return vals
 
 def moy_front(vals):
-    # moyenne pondérée frontale (0..4), poids fort au centre
+    # moyenne pondérée frontal, poids fort au centre
     return (vals[0] + 5*vals[1] + 30*vals[2] + 5*vals[3] + vals[4]) / 42.0
 
 def behavior_go(vals):
     mf = moy_front(vals)
 
-    # vitesse proportionnelle (même logique que ton indécis)
+    # vitesse proportionnelle 
     v = MAX_SPEED - mf * (MAX_SPEED / SEUIL_CAPTEURS)
 
-    # bornes (évite vitesse négative / trop lente)
+    # bornes (évite vitesse négative)
     if v < 0.25 * MAX_SPEED:
         v = 0.25 * MAX_SPEED
     if v > MAX_SPEED:
@@ -50,9 +50,9 @@ def set_motors(motor_left, motor_right, vL, vR):
     motor_right.setVelocity(vR)
 
 
-# =========================
+
 # PROGRAMME PRINCIPAL
-# =========================
+
 robot = Robot()
 timestep = int(robot.getBasicTimeStep())
 
