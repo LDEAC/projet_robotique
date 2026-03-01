@@ -91,7 +91,7 @@ Si un obstacle est détecté au-delà d’un seuil, le robot s’arrête immédi
 Dès que l’obstacle disparaît, il repart tout droit.
 
 ## Logique des vitesses
-Même si son comportement est plus simple, la vitesse reste calculée selon une logique inspirée de Braitenberg :  
+La vitesse reste calculée selon une logique inspirée de Braitenberg :  
 plus l’obstacle frontal est proche, plus la vitesse diminue.
 
 
