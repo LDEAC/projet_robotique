@@ -20,7 +20,7 @@ Un fichier vidéo est également fourni.
 Il montre les différents comportements des robots ainsi que le fonctionnement des convoi en simulation.
 # Projet Robotique – Séance 2
 
-## 2. Présentation générale
+# 2. Présentation générale
 
 Le projet comporte trois contrôleurs correspondant à trois robots distincts :
 
